@@ -1,0 +1,17 @@
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.passThroughPublisher2.send(3)
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+//            self.passThroughPublisher2.send(4)
+//        }
+    }
+}
+        .overlayPreferenceValue(BoundsPreferenceKey.self) { preferences in
+            GeometryReader { geometry in
+                preferences.map {
+                    Rectangle()
+                        .stroke()
+                        .frame(
+                            width: geometry[$0].width,
+                            height: geometry[$0].height
+                        )
